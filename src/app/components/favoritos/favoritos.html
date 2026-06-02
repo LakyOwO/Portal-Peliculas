@@ -1,0 +1,50 @@
+<div class="container py-5">
+
+  <h1 class="text-center mb-5">
+    ❤️ Mis Favoritos
+  </h1>
+
+  <div class="row g-4">
+
+    <div
+      *ngFor="let pelicula of favoritos"
+      class="col-md-6 col-lg-4 col-xl-3"
+    >
+
+      <div class="card h-100 shadow movie-card">
+
+        <img
+          [src]="getPoster(pelicula.poster_path)"
+          [alt]="pelicula.title"
+          class="card-img-top"
+        >
+
+        <div class="card-body d-flex flex-column">
+
+          <h5 class="card-title">
+            {{ pelicula.title }}
+          </h5>
+
+          <p class="card-text text-muted flex-grow-1">
+
+            {{
+              pelicula.overview
+                ? (pelicula.overview | slice:0:100) + '...'
+                : 'Sin descripción disponible.'
+            }}
+
+          </p>
+
+          <small class="text-secondary">
+            ⭐ {{ pelicula.vote_average }}
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

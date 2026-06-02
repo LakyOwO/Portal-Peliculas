@@ -1,0 +1,12 @@
+.movie-card {
+  transition: .3s;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+}
+
+.movie-card img {
+  height: 400px;
+  object-fit: cover;
+}
